@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  /* Core color palette */
+  --background: #dee8f7;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  
+  /* Text colors */
+  --text-primary: #2b2d42;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  
+  /* Accent colors */
+  --accent: #c64191;
+  --accent-light: #5d737e;
+  --accent-hover: #b62196;
+  
+  /* Interactive elements */
+  --button-bg: #1e293b;
+  --button-text: #ffffff;
+  --button-hover: #334155;
+  --button-border: #7e8da1;
+  
+  /* Effects */
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --glassmorphism-shadow: 0 2px 2px rgba(31, 38, 135, 0.12);
+  
+  /* Animation */
+  --transition-speed: 0.25s;
+  
+  /* Typography */
+  --font-family: system-ui, 'Inter', Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base styles */
+body {
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  font-size: 16px;
+  background-color: var(--background);
+  background-image: 
+    linear-gradient(120deg, rgba(176, 190, 255, 0.1), rgba(255, 255, 255, 0)),
+    linear-gradient(240deg, rgba(236, 233, 255, 0.1), rgba(255, 255, 255, 0));
+  background-attachment: fixed;
+}
+
+/* Typography */
+h1, h2 {
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+
+
+h1 {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1.25rem;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+

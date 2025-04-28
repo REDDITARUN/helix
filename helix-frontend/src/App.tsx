@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from 'axios'; 
+
+// Import Components
 import './App.css';
 import ChatBox from './components/chatbox/ChatBox';
 import WorkSpace from './components/workspace/WorkSpace';

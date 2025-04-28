@@ -112,7 +112,7 @@
 .card-actions button {
   padding: 0.2rem 1rem;
   font-weight: 500;
-  border-radius: 20px;
+  border-radius: 5px;
   cursor: pointer;
   transition: all var(--transition-speed) ease;
   font-size: 0.875rem;

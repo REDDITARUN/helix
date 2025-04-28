@@ -11,16 +11,16 @@ class SequenceService:
         if not api_key: raise ValueError("GOOGLE_API_KEY not configured")
         genai.configure(api_key=api_key)
         self.generation_config_params = { 
-             "temperature": 0.8, "top_p": 0.95, "top_k": 40, "max_output_tokens": 4096,
+             "temperature": 0.8, "top_p": 0.95, "top_k": 40, "max_output_tokens": 8192,
         }
         self.modification_config_params = { 
-             "temperature": 0.6, "top_p": 0.95, "top_k": 40, "max_output_tokens": 4096,
+             "temperature": 0.6, "top_p": 0.95, "top_k": 40, "max_output_tokens": 8192,
         }
         self.model = genai.GenerativeModel(model_name="gemini-2.5-flash-preview-04-17")
 
     def _build_sequence_prompt(self, context):
         prompt = f"""
-        Based on the following recruitment requirements, generate exactly 4 new parts of an outreach message suitable for an outreach template.
+        Based on the following recruitment requirements, generate exactly 4 types of outreach messages that are suitable and ready to sent effective immedately.
 
         Requirements:
         - Target Role: {context.get('target_role', 'N/A')}
@@ -29,7 +29,10 @@ class SequenceService:
         - Ideal Candidate Persona: {context.get('candidate_persona', 'N/A')}
         - Desired Tone: {context.get('tone', 'professional')}
 
-        Output MUST be a valid JSON object containing ONLY a single key "sequences", which is an array of 4 strings. Each string should be a part of message sequence. DO NOT include any other text or explanations before or after the JSON object.
+        Output MUST be a valid JSON object containing 4 types or styles of messages or emails array following proper structure of emails and spacing.
+        Ensure email sequences are comprehensive, and they follow the structure of start and end credits. 
+        DO NOT include any other text or explanations before or after the JSON object.
+        
 
         Example JSON Output Structure:
         ```json
